@@ -1,7 +1,13 @@
 package com.codingtest;
 
+import com.codingtest.level1.Lotto;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("main test");
+        Lotto lotto=new Lotto();
+        int []lottos={44, 1, 0, 0, 31, 25};
+        int []wins={31, 10, 45, 1, 6, 19};
+        lotto.solution(lottos,wins);
+
     }
 }
