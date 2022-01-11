@@ -6,7 +6,7 @@ import java.util.List;
 //3진법 뒤집기
 public class Ternary {
     public int solution(int n) {
-        int x=3;
+        int x=3;        //n진법
         int answer = 0;
         int m=1;
         List<Integer> list=new ArrayList<>();
