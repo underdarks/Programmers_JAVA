@@ -14,6 +14,7 @@ public class FailRate {
 
         ArrayList<Double> keys = new ArrayList<>(map.keySet());
         keys.sort(Collections.reverseOrder());
+
         for (Double key : keys) {
             ArrayList<Integer> list=map.get(key);
             for (Integer value : list) {
@@ -39,7 +40,12 @@ public class FailRate {
                     loserCount++;
             }
 
-            double key=((loserCount-beforeLoserCount) / (totalChallenger-beforeLoserCount));
+            double key=0.0;
+            //굉장히 문제가 생길 코드!!
+            //분모가 0일 경우 생각해야한다.
+            if(totalChallenger-beforeLoserCount > 0)
+                key=((loserCount-beforeLoserCount) / (totalChallenger-beforeLoserCount));
+
             ArrayList<Integer> list=new ArrayList<>();
             if(map.containsKey(key)){ //중복값이 있으면
                 list=map.get(key);
@@ -58,9 +64,9 @@ public class FailRate {
     }
 
     public static void main(String[] args) {
-        int []stages={2, 1, 2, 6, 2, 4, 3, 3};
+        int []stages={4,4,4,4};
         FailRate f=new FailRate();
-        int []result=f.solution(5,stages);
+        int []result=f.solution(6,stages);
         for (int i : result) {
             System.out.println("i = " + i);
         }
