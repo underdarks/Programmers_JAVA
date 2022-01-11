@@ -10,16 +10,17 @@ public class HateSameNumber {
         int history=-1;
         List<Integer> list=new ArrayList<>();
 
-        if(arr.length > 0)
-            history=arr[0];
+//        if(arr.length > 0)
+//            history=arr[0];
 
-        for(int i=1;i<arr.length;i++){
+        for(int i=0;i<arr.length;i++){
             if(history != arr[i]) {
-                list.add(history);
-                history = arr[i];
+                list.add(arr[i]);
             }
+            history = arr[i];
         }
-        list.add(arr[arr.length-1]);
+
+//        list.add(arr[arr.length-1]);
 
         return list.stream().mapToInt(Integer::intValue).toArray();
     }
