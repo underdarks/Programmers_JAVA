@@ -2,6 +2,7 @@ package com.codingtest.level1;
 
 import java.util.Arrays;
 
+//없는 숫자 더하기
 public class NoNumAdd {
 
     public boolean binarySearch(int []nums,int findNum)
@@ -21,7 +22,6 @@ public class NoNumAdd {
 
             else                            //중간값이 해당 숫자보다 작으면
                 startIndex=mid+1;
-
         }
 
         return false;

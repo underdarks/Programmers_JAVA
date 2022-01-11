@@ -25,7 +25,6 @@ public class FailRate {
         return answer;
     }
 
-
     public int[] solution(int N, int[] stages) {
         double []answer = new double[N];  //스테이지 개수 만큼 생성
         double beforeLoserCount=0;
