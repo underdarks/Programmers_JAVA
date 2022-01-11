@@ -1,6 +1,7 @@
 package com.codingtest.level1;
 
-public class NewId {
+//카카오 아이디 추천
+public class Kakao_NewId {
     public String solution(String new_id) {
         StringBuilder sb = new StringBuilder();
         String answer = "";
@@ -61,7 +62,7 @@ public class NewId {
     public static void main(String[] args) {
         String str = "...!@BaT#*..y.abcdefghijklm\"";
 
-        NewId newId = new NewId();
+        Kakao_NewId newId = new Kakao_NewId();
         System.out.println(newId.solution(str));
     }
 }

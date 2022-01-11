@@ -1,5 +1,7 @@
 package com.codingtest.level1;
 
+
+//문자열 정수로 바꾸기
 public class StringToInt {
     public int solution(String s) {
         int answer = 0;

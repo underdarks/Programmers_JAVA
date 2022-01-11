@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+//수포자
 public class MathGiveUp {
 
     public int getMax(int []nums)

@@ -1,5 +1,6 @@
 package com.codingtest.level1;
 
+//중간문자 찾기
 public class MidString {
     public String solution(String s) {
         String answer = "";

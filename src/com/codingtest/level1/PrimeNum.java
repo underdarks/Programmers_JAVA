@@ -1,5 +1,6 @@
 package com.codingtest.level1;
 
+//소수 구하기
 public class PrimeNum {
     //소수 판별 알고리즘
     public boolean isPrimeNum(int num){

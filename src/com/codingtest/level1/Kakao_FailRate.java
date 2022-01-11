@@ -3,9 +3,9 @@ package com.codingtest.level1;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 
-public class FailRate {
+//실패율
+public class Kakao_FailRate {
 
     public int[] descendingSort(int N,HashMap<Double, ArrayList<Integer>> map)
     {
@@ -64,7 +64,7 @@ public class FailRate {
 
     public static void main(String[] args) {
         int []stages={4,4,4,4};
-        FailRate f=new FailRate();
+        Kakao_FailRate f=new Kakao_FailRate();
         int []result=f.solution(6,stages);
         for (int i : result) {
             System.out.println("i = " + i);

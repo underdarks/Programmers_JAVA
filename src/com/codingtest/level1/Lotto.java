@@ -4,6 +4,7 @@ import java.util.*;
 
 import java.util.stream.IntStream;
 
+//로또 구하기
 public class Lotto {
         public Map<Integer,Integer> setRank(){
             //당첨 갯수,순위 Map 구현

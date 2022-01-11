@@ -2,6 +2,7 @@ package com.codingtest.level1;
 
 import java.util.Arrays;
 
+//K번째 숫자
 public class Knums {
     public int[] solution(int[] array, int[][] commands) {
         int[] answer = new int[commands.length];

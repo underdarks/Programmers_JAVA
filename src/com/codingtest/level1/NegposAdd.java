@@ -1,5 +1,6 @@
 package com.codingtest.level1;
 
+//양수 음수 더하기
 public class NegposAdd {
     public int solution(int[] absolutes, boolean[] signs) {
         int answer = 0;
