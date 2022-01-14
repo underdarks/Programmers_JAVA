@@ -1,4 +1,4 @@
-package com.codingtest.level1;
+package com.codingtest.programmers.level1;
 
 //중간문자 찾기
 public class MidString {

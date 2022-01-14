@@ -1,8 +1,6 @@
-package com.codingtest.level1;
+package com.codingtest.programmers.level1;
 
 import java.util.*;
-
-import java.util.stream.IntStream;
 
 //로또 구하기
 public class Lotto {

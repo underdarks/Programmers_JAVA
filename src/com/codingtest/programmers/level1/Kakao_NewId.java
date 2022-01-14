@@ -1,4 +1,4 @@
-package com.codingtest.level1;
+package com.codingtest.programmers.level1;
 
 //카카오 아이디 추천
 public class Kakao_NewId {

@@ -1,4 +1,4 @@
-package com.codingtest.level1;
+package com.codingtest.programmers.level1;
 
 //양수 음수 더하기
 public class NegposAdd {

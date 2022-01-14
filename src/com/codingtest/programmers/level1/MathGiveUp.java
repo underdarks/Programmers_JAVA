@@ -1,7 +1,6 @@
-package com.codingtest.level1;
+package com.codingtest.programmers.level1;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 //수포자

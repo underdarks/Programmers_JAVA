@@ -1,6 +1,6 @@
 package com.codingtest;
 
-import com.codingtest.level1.Lotto;
+import com.codingtest.programmers.level1.Lotto;
 
 public class Main {
     public static void main(String[] args) {

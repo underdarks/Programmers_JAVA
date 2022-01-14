@@ -1,4 +1,4 @@
-package com.codingtest.level1;
+package com.codingtest.programmers.level1;
 
 //나머지가 1이 되는 수
 public class RemainderOne {
