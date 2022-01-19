@@ -2,7 +2,7 @@ package com.codingtest.programmers.level2;
 
 import java.util.*;
 
-//전화번호 목록
+//전화번호 목록(해시)
 public class PhoneNum {
     public boolean solution(String[] phone_book) {
         //1.배열로 풀기

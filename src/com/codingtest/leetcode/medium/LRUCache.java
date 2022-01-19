@@ -14,15 +14,15 @@ public class LRUCache {
     Map<Integer,Integer> map;
     List<String> l=new LinkedList<String>();
 
-    public LRUCache(int capacity) {
-        map=new HashMap<>(2);
-    }
-
-    public int get(int key) {
-
-    }
-
-    public void put(int key, int value) {
-
-    }
+//    public LRUCache(int capacity) {
+//        map=new HashMap<>(2);
+//    }
+//
+//    public int get(int key) {
+//
+//    }
+//
+//    public void put(int key, int value) {
+//
+//    }
 }
