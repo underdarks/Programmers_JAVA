@@ -12,9 +12,9 @@ public class Change {
         int count=0;
 
         for (Integer money : moneys) {
-            while (n >= money) {
-                n -= money;
-                count++;
+            if (n >= money) {
+                count+=n/money;
+                n%=money;
             }
         }
 
