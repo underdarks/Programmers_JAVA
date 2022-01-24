@@ -9,22 +9,15 @@ public class BigNumAdd implements MyStack{
         String tag=a.length() > b.length() ? "a":"b";
         Stack<Integer> stackA=new Stack<>();
         Stack<Integer> stackB=new Stack<>();
-
         int sum=0;
         int mok=0;
-
         StringBuilder str=new StringBuilder();
 
-
-        for (char c : a.toCharArray()) {
+        for (char c : a.toCharArray())
             stackA.push(c-'0'); //숫자 값
-        }
 
-        for (char c : b.toCharArray()) {
+        for (char c : b.toCharArray())
             stackB.push(c-'0'); //숫자 값
-        }
-
-
 
         while(!stackA.empty() && !stackB.empty()){
             int v1=stackA.pop();
@@ -54,7 +47,6 @@ public class BigNumAdd implements MyStack{
                 mok=sum/10;
                 sum%=10;
                 str.append(sum);
-
             }
         }
 
