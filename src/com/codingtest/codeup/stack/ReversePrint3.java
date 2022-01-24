@@ -1,11 +1,10 @@
 package com.codingtest.codeup.stack;
 
-import java.util.List;
 import java.util.Scanner;
 import java.util.Stack;
 
 //1402 : 거꾸로 출력하기 3
-public class ReversePring3 {
+public class ReversePrint3 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int n = sc.nextInt();
