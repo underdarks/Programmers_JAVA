@@ -10,34 +10,24 @@ public class NCRHell {
 
     //nCr= n!/(n-r)!*r!
     public static double getNcrNum(Long n,Long r){
-        BigInteger bunja=new BigInteger("1");
-        BigInteger bunmo=new BigInteger("1");
+        BigInteger nFac=new BigInteger("1");
+        BigInteger rFac=new BigInteger("1");
+        BigInteger nminusRFac=new BigInteger("1");
 
-        String tag = (n-r) >= r ? "n-r" : "r";
+        for (int i = 2; i <= n; i++) {
+            nFac=nFac.multiply(BigInteger.valueOf(i));
 
-        //ex.n=1
-        //n-r이 r보다 크거나 같으면
-        if(tag.equals("n-r")){
-            for(Long i=n;i>n-r;i--)
-                bunja=bunja.multiply(BigInteger.valueOf(i));
+            if(i == r)
+                rFac=nFac.multiply(BigInteger.valueOf(1));
 
-            for(Long i=2L;i<=r;i++)
-                bunmo=bunmo.multiply(BigInteger.valueOf(i));
+            if(i == (n-r))
+                nminusRFac=nFac.multiply(BigInteger.valueOf(1));
         }
 
-        //n-r이 r보다 작으면
-        else {
-            for(Long i=n;i>r;i--)
-                bunja = bunja.multiply(BigInteger.valueOf(i));
+        rFac=rFac.multiply(nminusRFac);
+        nFac=nFac.divide(rFac);
 
-            for(Long i=2L;i<=n-r;i++)
-                bunmo = bunmo.multiply(BigInteger.valueOf(i));
-
-        }
-
-        bunja=bunja.divide(bunmo);
-        double result = bunja.remainder(BigInteger.valueOf(1999)).doubleValue();
-
+        double result = nFac.remainder(BigInteger.valueOf(1999)).doubleValue();
         return result;
     }
 
