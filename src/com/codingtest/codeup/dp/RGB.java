@@ -6,46 +6,32 @@ import java.util.*;
 //3803 : RGB 거리
 //https://codeup.kr/problem.php?id=3803
 public class RGB {
+//    public static int dp[][];
 
-    public static int getLowCost(int [][] cost,int n){
-        int lowCost=0;
-        int minCost=0;
-        int selectCost=0;
-        int beforeIndex=-1;
-        int tmp=0;
 
-        //값이 1개이면
-        if(n == 1) {
-            Arrays.sort(cost[0]);
-            return cost[0][0];
+    public static int getMinCost(int n,int color,int [][]cost,int [][]dp){
+        if(n == 0)
+            return cost[n][color];
+
+        if(dp[n][color] == 0){
+            //RED 이면
+            if(color == 0)
+                dp[n][color]=Math.min(getMinCost(n-1,1,cost,dp),getMinCost(n-1,2,cost,dp))
+                        +cost[n][color];
+
+            //GREEN 이면
+            else if(color == 1)
+                dp[n][color]=Math.min(getMinCost(n-1,0,cost,dp),getMinCost(n-1,2,cost,dp))
+                        +cost[n][color];
+
+            //BLUE 이면
+            else
+                dp[n][color]=Math.min(getMinCost(n-1,0,cost,dp),getMinCost(n-1,1,cost,dp))
+                        +cost[n][color];
+
         }
 
-
-        for (int i = 0; i < cost.length-1; i++) {
-            minCost=10000000;
-
-            for(int k=0;k<3;k++) {
-                if(k == beforeIndex) continue;      //
-                for (int j = 0; j < 3; j++) {
-                    if (k != j ) {
-                        int value = cost[i][k] + cost[i + 1][j];  //위의 행과 아래행 합 식별
-                        if (minCost >= value) {
-                            minCost = value;
-                            selectCost = cost[i][k];
-                            tmp=k;
-
-                            if(i == cost.length - 2)
-                                selectCost=minCost;
-                        }
-                    }
-                }
-            }
-
-            beforeIndex=tmp;
-            lowCost += selectCost;
-        }
-
-        return lowCost;
+        return dp[n][color];
     }
 
 
@@ -59,7 +45,13 @@ public class RGB {
                 cost[i][j]=sc.nextInt();
         }
 
-        int lowCost = getLowCost(cost,n);
-        System.out.println(lowCost);
+        int [][]dp=new int[n][3];
+
+        //R이랑 G 비교
+        int min = Math.min(getMinCost(n - 1, 0, cost,dp), getMinCost(n - 1, 1, cost,dp));
+        //최소값이랑 B랑 비교
+        System.out.println(Math.min(min,getMinCost(n-1,2,cost,dp)));
+
+
     }
 }
