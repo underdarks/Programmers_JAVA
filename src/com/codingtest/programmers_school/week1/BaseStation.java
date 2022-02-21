@@ -1,6 +1,7 @@
 package com.codingtest.programmers_school.week1;
 
 import java.util.*;
+import java.util.stream.IntStream;
 
 public class BaseStation {
 
@@ -29,31 +30,24 @@ public class BaseStation {
 //    }
 
     public int solution(int n, int[] stations, int w) {
-        int answer = 0;
-        int x = 2 * w + 1;
-        int rightIndex = 0;
-        int value = 0;
+        int answer=0;
+        int now=0;  // 1<=n<=10,000
+        int idx=0;
+        int distance=2*w+1;
 
-        for (int station : stations) {
-            int currentIndex = station - 1;    //현재 기지국 위치(인덱스)
-            value = Math.max(currentIndex - w - rightIndex, 0); //왼쪽 범위값 구하기
-            rightIndex = currentIndex + w + 1;       //맨오른쪽 기지국의 위치(인덱스)
+        while (now < n){
+            if (idx < stations.length && now + w >= stations[idx] - 1)    //기지국 이면
+            {
+                now = stations[idx] + w;
+                idx++;
+            }
 
-            int mok = value / x;
-            answer += mok;
-
-            if (value % x > 0)   //나머지가 있으면
-                answer += 1;
+            //기지국이 아니면
+            else {
+                answer++;   //기지국 설치
+                now += distance;
+            }
         }
-
-        //오른쪽 범위 값구하기
-        value = n - rightIndex;
-        int mok = value / x;
-        answer += mok;
-
-        if (value % x > 0)   //나머지가 있으면
-            answer += 1;
-
 
         return answer;
     }
