@@ -20,7 +20,7 @@ public class BaseStation {
             if(!check[i]) {
                 if(index < stations.length && stations[index] -1 <= i+w)   //기지국이 이미 설치되어 있으면
                 {
-                    int station = stations[index++]-1;
+                    int station = stations[index++]-1;  //기지국의 인덱스
                     doCheck(check,w,station);
                     i=station+w;
                 }
