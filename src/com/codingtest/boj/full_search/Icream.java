@@ -8,14 +8,14 @@ import java.util.*;
 //https://www.acmicpc.net/problem/2422
 public class Icream {
 
-    public static int getMethod(int n,){
-
-        for(int i=1;i<n;i++){
-
-        }
-
-    }
-
+//    public static int getMethod(int n,){
+//
+//        for(int i=1;i<n;i++){
+//
+//        }
+//
+//    }
+//
 
     public static void main(String[] args){
         try {
