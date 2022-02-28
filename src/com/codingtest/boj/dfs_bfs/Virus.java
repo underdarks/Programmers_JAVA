@@ -8,6 +8,7 @@ import java.util.Queue;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
+//https://www.acmicpc.net/problem/2606
 public class Virus {
 
     static int count=0;
@@ -58,8 +59,9 @@ public class Virus {
         que.offer(0);   //첫번째 노드
 
         while (!que.isEmpty()){
-            Integer vertex = que.poll();
-            if(!visit[vertex])
+            Integer vertex = que.poll();    //Dequeue
+
+            if(!visit[vertex])  //방문 여부 확인
                 count++;
 
             visit[vertex]=true;
@@ -68,7 +70,6 @@ public class Virus {
                 if(!visit[i] && graph[vertex][i] == 1)   //방문하지 않고 연결되어 있으면
                     que.offer(i);
             }
-
         }
 
         return count-1;
@@ -92,6 +93,7 @@ public class Virus {
                 int v1 = Integer.parseInt(st.nextToken());
                 int v2 = Integer.parseInt(st.nextToken());
 
+                //양방향 연결
                 graph[v1-1][v2-1]=1;
                 graph[v2-1][v1-1]=1;
             }
@@ -100,13 +102,13 @@ public class Virus {
 //            int virusComputersByBFS = findVirusComputersByBFS(graph);
 //            System.out.println(virusComputersByBFS);
 
-//            int dfsUsingStack = findVirusComputersByDFSUsing_Stack(graph);
-//            System.out.println(dfsUsingStack);
+            int dfsUsingStack = findVirusComputersByDFSUsing_Stack(graph);
+            System.out.println(dfsUsingStack);
 
 
-            boolean []visit=new boolean[graph.length];
-            findVirusComputersByDFS_Recursion(graph,visit,0);
-            System.out.println(count-1);
+//            boolean []visit=new boolean[graph.length];
+//            findVirusComputersByDFS_Recursion(graph,visit,0);
+//            System.out.println(count-1);
 
 
         } catch (IOException e) {
