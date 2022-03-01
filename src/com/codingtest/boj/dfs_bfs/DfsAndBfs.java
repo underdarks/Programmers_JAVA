@@ -69,6 +69,51 @@ public class DfsAndBfs {
 
     }
 
+    public static void dfs(int node, int start, int[][] intTable) {
+        int[] visited=new int[node];
+        int row = start - 1;
+        Stack<Integer> stack = new Stack<>();
+        stack.push(row);
+
+        while (!stack.isEmpty()) {
+            row = stack.pop();
+            visited[row]=1;
+            System.out.print( row+1 + " ");
+
+            for (int i = 0; i <node ; i++) {
+                if (intTable[row][i] == 1 && visited[i] == 0) {
+                    stack.push(i);
+                    visited[i] = 1;
+                    break;
+                }
+            }
+
+        }
+    }
+
+
+    public static void bfs ( int node,int start, int[][] intTable){
+        int[] visited=new int[node];
+        int row = start - 1;
+        Queue<Integer> que = new LinkedList<>();
+        que.offer(row);
+
+        while (!que.isEmpty()){
+            row = que.poll();
+            visited[row] = 1;
+
+            System.out.print(row + 1 + " ");
+
+            for(int i=0; i<node ; i++){
+                if(visited[i]==0 && intTable[row][i]==1){
+                    que.offer(i);
+                    visited[i]=1;
+                }
+            }
+
+        }
+    }
+
 
     public static void main(String[] args) {
         try {
@@ -98,9 +143,11 @@ public class DfsAndBfs {
 
             boolean []visit=new boolean[n];
 
+//            dfs(n,vertex,graph);
             findVirusComputersByDFS_Recursion(graph,visit,vertex-1);
             System.out.println();
-            findVirusComputersByBFS(graph,vertex-1);
+            bfs(n,vertex,graph);
+//            findVirusComputersByBFS(graph,vertex-1);
 
         } catch (IOException e) {
             e.printStackTrace();

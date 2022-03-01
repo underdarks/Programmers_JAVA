@@ -25,7 +25,6 @@ public class Virus {
         }
     }
 
-
     //DFS로 구현(Stack)
     public static int findVirusComputersByDFSUsing_Stack(int [][]graph){
         boolean []visit=new boolean[graph.length];
