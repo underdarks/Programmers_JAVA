@@ -1,4 +1,4 @@
-package com.codingtest.programmers_school.midterm_exam;
+package com.codingtest.programmers_school.week2.midterm_exam;
 
 
 
