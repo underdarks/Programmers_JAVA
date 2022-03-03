@@ -1,5 +1,6 @@
 package com.codingtest.programmers_school.week3;
 
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -63,6 +64,7 @@ public class GameMap {
             int x = pos.getX();
             int y = pos.getY();
             int count= pos.getCount();
+
             if(!visit[x][y]) {    //방문하지 않았으면
                 visit[x][y]=true;
 
@@ -71,19 +73,19 @@ public class GameMap {
 
                 /* BFS 탐색(아래 -> 오른 -> 위 -> 왼쪽순으로 벽이 없는 자리 큐에 넣는다) */
                 //아래쪽
-                if (x + 1 < row && maps[x + 1][y] == 1)
+                if (x + 1 < row && maps[x + 1][y] == 1 && !visit[x+1][y])
                     que.offer(new Position(x + 1, y, count + 1));
 
-                    //오른쪽
-                if (y + 1 < col && maps[x][y + 1] == 1)
+                //오른쪽
+                if (y + 1 < col && maps[x][y + 1] == 1 && !visit[x][y+1])
                     que.offer(new Position(x, y + 1, count + 1));
 
-                    //위쪽
-                if (x - 1 >= 0 && maps[x - 1][y] == 1)
+                //위쪽
+                if (x - 1 >= 0 && maps[x - 1][y] == 1 && !visit[x-1][y])
                     que.offer(new Position(x - 1, y, count + 1));
 
-                    //왼쪽
-                if (y - 1 >= 0 && maps[x][y - 1] == 1)
+                //왼쪽
+                if (y - 1 >= 0 && maps[x][y - 1] == 1 && !visit[x][y-1])
                     que.offer(new Position(x, y - 1, count + 1));
 
 
