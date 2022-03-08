@@ -12,7 +12,6 @@ public class IntTriangle {
          * Bottom-Up 방식으로 최대값의 누적해서 꼭대기로 올라온다
          * 꼭대기값이 숫자의 최대값을 의미함
          */
-
         for (int row = height; row > 0; row--) {
             for (int col = row; col > 0; col--)
                 triangle[row-1][col-1]+=Math.max(triangle[row][col], triangle[row][col-1]);
@@ -22,7 +21,9 @@ public class IntTriangle {
         return triangle[0][0];
     }
 
-
+    /**
+     * Top-Down 방식의 알고리즘
+     */
 //    public int solution(int[][] triangle) {
 //        int answer = triangle[0][0];    //맨 처음 꼭대기
 //        int [][]dp=new int[triangle.length][triangle[triangle.length-1].length];
