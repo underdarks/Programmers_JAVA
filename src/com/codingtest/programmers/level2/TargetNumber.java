@@ -12,7 +12,7 @@ public class TargetNumber {
         }
 
 
-        makeTargetNum(nums,);
+//        makeTargetNum(nums,);
 
     }
 
