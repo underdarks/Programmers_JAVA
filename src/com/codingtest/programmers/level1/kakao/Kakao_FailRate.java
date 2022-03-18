@@ -1,4 +1,4 @@
-package com.codingtest.programmers.level1;
+package com.codingtest.programmers.level1.kakao;
 
 import java.util.ArrayList;
 import java.util.Collections;
