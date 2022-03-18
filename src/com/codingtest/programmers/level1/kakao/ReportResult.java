@@ -33,15 +33,11 @@ public class ReportResult {
 
                 for (String mailId : list)
                     mailCount.put(mailId,mailCount.getOrDefault(mailId,0)+1);   //메일 발송 횟수 증가
-
             }
-
         }
 
         for (String s : id_list)
             answer[idx++]=mailCount.getOrDefault(s,0);
-
-
 
         return answer;
     }
