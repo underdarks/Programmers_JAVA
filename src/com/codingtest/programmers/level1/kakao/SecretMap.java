@@ -43,16 +43,13 @@ public class SecretMap {
         int []arr1={46, 33, 33, 22, 31,50};
         int []arr2={27, 56, 19, 14, 14,10};
 
-//        System.out.println(9 | 30);
-//        String s = Integer.toBinaryString(9 | 30);
-//        System.out.println("s = " + s);
+        System.out.println(9 | 30);
+        String s = Integer.toBinaryString(9 | 30);
+        System.out.println("s = " + s);
 
         SecretMap secretMap=new SecretMap();
         String[] solution = secretMap.solution(n, arr1, arr2);
 
-        for (String s : solution) {
-            System.out.println(s + " ");
 
-        }
     }
 }
