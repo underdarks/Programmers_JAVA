@@ -45,6 +45,8 @@ public class LottoScore {
         Arrays.sort(lottos);
         Arrays.sort(win_nums);
 
+//        Arrays.binarySearch()
+
         for (int lotto : lottos) {
             int result = findNum(win_nums, lotto);
 
