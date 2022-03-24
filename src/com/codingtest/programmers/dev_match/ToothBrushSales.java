@@ -1,9 +1,6 @@
 package com.codingtest.programmers.dev_match;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 //다단계 칫솔 판매
 //https://programmers.co.kr/learn/courses/30/lessons/77486
@@ -18,6 +15,8 @@ public class ToothBrushSales {
 
             graph.putIfAbsent(child, parents);
         }
+
+        LinkedList<Integer> linkedList=new LinkedList<>();
 
         return graph;
     }
@@ -36,7 +35,9 @@ public class ToothBrushSales {
     }
 
     //비용 정산(DFS 탐색)
-    public void costSettlement(String seller, List<Integer>moneys, Map<String, Integer> total, Map<String, String> graph) {
+    public void costSettlement(String seller, List<Integer>moneys,
+                               Map<String, Integer> total, Map<String, String> graph)
+    {
         String recommand = graph.getOrDefault(seller, ""); //판매자의 추천인
 
         if (!recommand.isEmpty()) {
