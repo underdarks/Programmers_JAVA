@@ -52,7 +52,6 @@ public class CollectSticker {
         for (int i = 0; i < sticker.length; i+=2)
             oddSum += sticker[i];
 
-
         for (int i = 1; i < sticker.length; i+=2)
             notOddSum += sticker[i];
 
