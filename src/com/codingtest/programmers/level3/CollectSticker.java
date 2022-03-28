@@ -5,13 +5,30 @@ package com.codingtest.programmers.level3;
 public class CollectSticker {
 
     public int solution(int sticker[]) {
-        int leftDp[] = sticker.clone();//왼쪽 스티커를 처음 때어 냇을 때
-        int rightDp[] = sticker.clone();   //오른쪽 스티커를 처음 때어 냈을 떄
+        int leftDp[] = new int[sticker.length];//왼쪽 스티커를 처음 때어 냇을 때
+        int rightDp[] = new int[sticker.length];   //오른쪽 스티커를 처음 때어 냈을 떄
 
         if (sticker.length == 1)
             return sticker[0];
 
-        return Math.max(rightDp[0],leftDp[1]);
+        leftDp[1] = leftDp[0] = sticker[0];
+
+
+
+        rightDp[0] = 0;
+        rightDp[1] = sticker[1];
+
+
+        //왼쪽 스티커 처음 땔 때
+        for (int i = 2; i < sticker.length - 1; i++)
+            leftDp[i] = Math.max(sticker[i] + leftDp[i - 2], leftDp[i - 1]);
+
+        //오른쪽 스티커를 처음 떌 때
+        for (int i = 2; i < sticker.length; i++)
+            rightDp[i] = Math.max(sticker[i] + rightDp[i - 2], rightDp[i - 1]);
+
+
+        return Math.max(leftDp[leftDp.length - 1], rightDp[rightDp.length-2]);
     }
 
 
