@@ -21,6 +21,4 @@ public class FibonacciNumber {
         System.out.println("fib = " + fib);
     }
 
-
-
 }
