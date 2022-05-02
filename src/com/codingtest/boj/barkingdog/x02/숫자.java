@@ -1,11 +1,10 @@
-package com.codingtest.barkingdog.x02;
+package com.codingtest.boj.barkingdog.x02;
 
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.math.BigInteger;
-import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 //https://www.acmicpc.net/problem/2576

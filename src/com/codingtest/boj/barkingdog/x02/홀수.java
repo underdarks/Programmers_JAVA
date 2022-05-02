@@ -1,4 +1,4 @@
-package com.codingtest.barkingdog.x02;
+package com.codingtest.boj.barkingdog.x02;
 
 
 import java.io.BufferedReader;
